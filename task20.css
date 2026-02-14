@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* SECTION */
+.creative-section {
+    min-height: 100vh;
+    padding: 80px 8%;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    position: relative;
+    overflow: hidden;
+
+    display: grid;                
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+/* CONTENT */
+.content {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeIn 1.5s ease;
+}
+
+.content h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+/* CARDS using FLEX */
+.cards {
+    display: flex;                  
+    gap: 30px;
+    position: relative;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    width: 240px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease;
+}
+
+/* OVERLAPPING EFFECT */
+.card2 {
+    transform: translateY(-30px);
+}
+
+.card3 {
+    transform: translateY(20px);
+}
+
+/* HOVER LIFT */
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* FLOATING SHAPES */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: float 6s infinite ease-in-out;
+}
+
+.shape1 {
+    width: 200px;
+    height: 200px;
+    background: #38bdf8;
+    top: 10%;
+    left: 10%;
+}
+
+.shape2 {
+    width: 150px;
+    height: 150px;
+    background: #f472b6;
+    bottom: 15%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+/* FADE-IN */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+    .cards {
+        flex-direction: column;    /* REQUIRED */
+        align-items: center;
+    }
+
+    .card2,
+    .card3 {
+        transform: none;
+    }
+}

@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* DASHBOARD GRID LAYOUT */
+.dashboard {
+    display: grid;                 
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    background: #1e1e2f;
+    color: white;
+    padding: 30px;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    background: #f4f6f9;
+    padding: 30px;
+}
+
+/* HEADER using FLEX */
+.header {
+    display: flex;                  /* REQUIRED */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.user {
+    background: #667eea;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+/* CARDS GRID */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    height: 150px;
+    border-radius: 12px;
+    background: #ddd;
+    position: relative;
+    overflow: hidden;
+}
+
+/* SHIMMER EFFECT */
+.shimmer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150px;
+    width: 150px;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -150px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        text-align: center;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
