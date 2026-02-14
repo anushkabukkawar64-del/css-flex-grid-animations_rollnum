@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* CENTER CONTENT USING FLEXBOX */
+.loader-section {
+    height: 100vh;
+    display: flex;                /* REQUIRED */
+    flex-direction: column;
+    justify-content: center;      /* Vertical center */
+    align-items: center;          /* Horizontal center */
+    background: #0f172a;
+    color: white;
+}
+
+/* LOADER CIRCLE */
+.loader {
+    width: 70px;
+    height: 70px;
+    border: 8px solid #334155;
+    border-top: 8px solid #38bdf8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+/* ROTATION ANIMATION */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
